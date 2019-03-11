@@ -18,3 +18,9 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/import', 'API\DetailPegawaiController@importExcel')->name('import');
+//Route::get('/surat', 'SuratController@index')->name('surat');
+
+
+Route::get('{path}', 'HomeController@index')->where('path','([A-z\d-\/_.]+)?' );
+//Route::get('{path}', 'SuratController@index')->where('path','([A-z\d-\/_.]+)?' );
